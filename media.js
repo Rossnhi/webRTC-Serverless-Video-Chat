@@ -6,7 +6,12 @@ selfVideo.addEventListener('click', swapVideos);
 
 let smallVideo = 'self';
 
-const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}]}
+const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'},
+    {
+      urls: 'turn:openrelay.metered.ca:80',
+      username: 'openrelayproject',
+      credential: 'openrelayproject'
+    }]}
 const peerConnection = new RTCPeerConnection(configuration);
 
 function swapVideos() {
